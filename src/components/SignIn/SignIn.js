@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../Shared/Navbar/Navbar'
-// import firebase from 'firebase/app' for version 8
-import firebase from 'firebase/compat/app'; // for version 9
+import firebase from 'firebase/compat/app';
 // import { initializeApp } from 'firebase/app';
-import 'firebase/compat/auth'; // for version 9
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import 'firebase/compat/auth';
+import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import firebaseConfig from './firebase.config';
 
 firebase.initializeApp(firebaseConfig);
@@ -12,34 +11,71 @@ firebase.initializeApp(firebaseConfig);
 
 export default function SignIn() {
 
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        userName: '',
+        userEmail: '',
+        userPhotoUrl: ''
+    });
+
     const googleProvider = new GoogleAuthProvider();
 
     const handleSignIn = () => {
-        // console.log('handled sign in');
         const auth = getAuth();
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                // const credential = GoogleAuthProvider.credentialFromResult(result);
-                // const token = credential.accessToken;
-                const user = result.user;
-                // const { displayName, photoURL, email } = user;
-                console.log(user);
-                // console.log(displayName, photoURL, email);
+                const { displayName, photoURL, email } = result.user;
+                const signedInUser = {
+                    isSignedIn: true,
+                    userName: displayName,
+                    userEmail: email,
+                    userPhotoUrl: photoURL
+                };
+                setUser(signedInUser);
+                console.log(signedInUser);
             })
             .catch((error) => {
-                // const errorCode = error.code;
                 const errorMessage = error.message;
-                // const email = error.email;
-                // const credential = GoogleAuthProvider.credentialFromError(error);
                 console.log(errorMessage);
+            });
+    }
+
+    const handleSignOut = () => {
+        // console.log('handled sign out');
+        const auth = getAuth();
+        signOut(auth)
+            .then((success) => {
+                const signedOutUser = {
+                    isSignedIn: false,
+                    userName: '',
+                    userEmail: '',
+                    userPhotoUrl: ''
+                };
+                setUser(signedOutUser);
+            })
+            .catch((error) => {
+                console.log(error);
             });
     }
 
     return (
         <div>
             <Navbar />
-            <h1 className='pt-24'>this is sign in</h1>
-            <button onClick={handleSignIn} className='bg-red-700 p-3 m-5 rounded text-white'>sign in with google</button>
+            <div className='pt-24'></div>
+            {
+                user.isSignedIn ?
+                    <button onClick={handleSignOut} className='bg-red-700 p-3 m-5 rounded text-white'>sign up</button>
+                    :
+                    <button onClick={handleSignIn} className='bg-red-700 p-3 m-5 rounded text-white'>sign in with google</button>
+            }
+            {
+                user.isSignedIn ?
+                    <div>
+                        <h2>Welcome {user.userName}</h2>
+                    </div>
+                    :
+                    <p>Not Signed in</p>
+            }
         </div>
     )
 }
