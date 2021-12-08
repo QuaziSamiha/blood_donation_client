@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faHandHoldingWater, faTimes } from '@fortawesome/free-solid-svg-icons'
-import logo from '../../../images/blood-icon.png'
+// import logo from '../../../images/blood-icon.png'
 import { Link } from "react-router-dom"
 
 export default function Navbar() {
