@@ -11,7 +11,7 @@ import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home/Home";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import SignIn from "./components/SignIn/SignIn";
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
