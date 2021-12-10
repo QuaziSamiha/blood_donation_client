@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Navbar from '../Shared/Navbar/Navbar'
 import firebase from 'firebase/compat/app';
 // import { initializeApp } from 'firebase/app';
 import 'firebase/compat/auth';
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import firebaseConfig from './firebase.config';
+import { UserContext } from '../../App';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 firebase.initializeApp(firebaseConfig);
 // const app = firebase.initializeApp(firebaseConfig);
 
 export default function SignIn() {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    // const { from } = location.state || { from: { pathname: '/' } };
 
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -32,7 +39,10 @@ export default function SignIn() {
                     userPhotoUrl: photoURL
                 };
                 setUser(signedInUser);
-                console.log(signedInUser);
+                // console.log(signedInUser);
+                setLoggedInUser(signedInUser);
+                // navigate(from);
+                // navigate('/');
             })
             .catch((error) => {
                 const errorMessage = error.message;
