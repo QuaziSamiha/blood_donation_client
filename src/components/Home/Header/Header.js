@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div>
             <Navbar />
-            <HeaderSlider />
+            {/* <HeaderSlider /> */}
         </div>
     )
 }

@@ -11,6 +11,7 @@ import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home/Home";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import SignIn from "./components/SignIn/SignIn";
+import BeDonorForm from './components/Home/BeDonorForm/BeDonorForm';
 // import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
@@ -27,6 +28,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/signIn" element={<SignIn />} />
+          {/* it will be private route */}
+          <Route path="/beDonor" element={<BeDonorForm />} />
           {/* <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>} /> */}
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFoundPage />} />

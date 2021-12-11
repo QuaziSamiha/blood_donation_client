@@ -47,7 +47,7 @@ export default function Navbar() {
 
 function SideMenu() {
     return (
-        <div className='fixed h-screen w-3/4 bg-red-600 top-12'>
+        <div className='fixed h-screen w-3/4 bg-red-600 top-14'>
             <ul className='flex flex-col font-xs font-bold items-center'>
                 <li className='hover:bg-white hover:text-red-700 px-20 py-2 my-1'>
                     <Link to='/home'>Home</Link>
