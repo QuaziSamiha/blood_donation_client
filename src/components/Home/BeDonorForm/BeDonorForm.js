@@ -24,7 +24,9 @@ const BeDonorForm = () => {
             imageUrl: imageURL
         }
 
-        const url = `http://localhost:5001/beDonor`;
+        // const url = `http://localhost:5001/beDonor`;
+        
+        const url = `https://shrouded-sea-66725.herokuapp.com/beDonor`;
         fetch(url, {
             method: 'POST',
             headers: {

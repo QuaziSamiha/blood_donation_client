@@ -12,7 +12,7 @@ const SearchDonor = () => {
 
     const onSubmit = data => {
         // console.log(data);
-        fetch(`http://localhost:5001/searchDonors?city=${data.city}&bloodGroup=${data.bloodGrp}`)
+        fetch(`https://shrouded-sea-66725.herokuapp.com/searchDonors?city=${data.city}&bloodGroup=${data.bloodGrp}`)
             .then(res => res.json())
             .then(data => {
                 setSearchDonorInfo(data);
