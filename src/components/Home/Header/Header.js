@@ -4,9 +4,9 @@ import HeaderSlider from '../HeaderSlider/HeaderSlider'
 
 export default function Header() {
     return (
-        <div>
+        < div className='container'>
             <Navbar />
-            {/* <HeaderSlider /> */}
+            <HeaderSlider />
         </div>
     )
 }

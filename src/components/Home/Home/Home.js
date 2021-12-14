@@ -2,12 +2,13 @@ import React from 'react'
 import Footer from '../../Shared/Footer/Footer'
 import BeDonor from '../BeDonor/BeDonor'
 import Header from '../Header/Header'
+import SearchDonor from '../SearchDonor/SearchDonor'
 
 export default function Home() {
     return (
-        <div>
+        <div className=''>
             <Header />
-            <h1 className='pt-24'>this is home</h1>
+            <SearchDonor />
             <BeDonor />
             <Footer />
         </div>
