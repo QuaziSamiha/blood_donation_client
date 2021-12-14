@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { DonorContext } from '../../../App';
 
 const SearchDonor = () => {
@@ -9,6 +9,8 @@ const SearchDonor = () => {
 
     const [isSearched, setIsSearched] = useState(false);
     const [searchDonorInfo, setSearchDonorInfo] = useContext(DonorContext);
+
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         // console.log(data);
@@ -57,11 +59,12 @@ const SearchDonor = () => {
                             <h1 className='text-red-700 font-bold text-xl pt-8'>
                                 {searchDonorInfo.length} Donors Available
                             </h1>
-                            <Link to='/searchDetail'>
-                                <button className='bg-red-700 text-white hover:bg-red-200 hover:text-red-700 rounded-md my-8 mx-8 py-2 px-12'>
-                                    Details
-                                </button>
-                            </Link>
+                            {/* <Link to='/searchDetail'> */}
+                            <button onClick={() => { navigate('/searchDetail') }}
+                                className='bg-red-700 text-white hover:bg-red-200 hover:text-red-700 rounded-md my-8 mx-8 py-2 px-12'>
+                                Details
+                            </button>
+                            {/* </Link> */}
                         </div>
                         :
                         <span></span>

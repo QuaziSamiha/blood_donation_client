@@ -16,7 +16,6 @@ export default function SignIn() {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // const { from } = location.state || { from: { pathname: '/' } };
 
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -39,10 +38,8 @@ export default function SignIn() {
                     userPhotoUrl: photoURL
                 };
                 setUser(signedInUser);
-                // console.log(signedInUser);
                 setLoggedInUser(signedInUser);
-                // navigate(from);
-                // navigate('/');
+                navigate(location.state.from);
             })
             .catch((error) => {
                 const errorMessage = error.message;
