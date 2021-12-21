@@ -1,6 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 
 const Footer = () => {
+
+    const date = new Date();
+    let year = date.getFullYear();
+
     return (
         <footer className='mt-20'>
             <section className='py-8 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t-2 border-b-2 shadow-lg'>
@@ -30,9 +36,10 @@ const Footer = () => {
                 </div>
             </section>
 
-            <div className='mt-12 py-2 border-t-2 flex items-center justify-center'>
+            <div className='text-sm  mt-12 py-2 border-t-2 bg-red-700 text-white font-semibold flex items-center justify-center'>
+                <FontAwesomeIcon className='mr-2' icon={faCopyright}></FontAwesomeIcon>
                 <h5 className=''>
-                    copy right reserved
+                    Copyright {year}, All Rights Reserved
                 </h5>
             </div>
         </footer>
