@@ -13,6 +13,10 @@ const Footer = () => {
                 <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
                     <div className='py-4'>
                         <h1 className='text-xl text-red-700 font-bold'>Let's Connect</h1>
+                        <p className='text-gray-700 font-semibold text-lg'>Email</p>
+                        <p className='text-gray-700 font-semibold text-lg'>Mobile</p>
+                        <p className='text-gray-700 font-semibold text-lg'>Facebook</p>
+                        <p className='text-gray-700 font-semibold text-lg'>Instragram</p>
                     </div>
                 </div>
                 <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
@@ -24,14 +28,18 @@ const Footer = () => {
                         <p className='text-gray-500 text-sm'>11am - 6pm</p>
                     </div>
                 </div>
-                <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
+                {/* <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
                     <div className='py-4'>
                         <h1 className='text-xl text-red-700 font-bold'>Address</h1>
+                        <p></p>
                     </div>
-                </div>
+                </div> */}
                 <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
                     <div className='py-4'>
-                        <h1 className='text-xl text-red-700 font-bold'>Leave Your comment</h1>
+                        <h1 className='text-xl text-red-700 font-bold'>Leave Your Comment</h1>
+                        <textarea className='border border-4 mt-4' name="" id="" cols="28" rows="10"></textarea>
+                        <br />
+                        <button className='bg-red-700 text-white px-12 py-2 mt-2 rounded' type="submit">Send</button>
                     </div>
                 </div>
             </section>
