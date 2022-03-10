@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
         <footer className='mt-20'>
-            <section className='py-8 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t-2 border-b-2 shadow-lg'>
+            <section className='py-8 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t-2 border-b-2 shadow-lg'>
                 <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
                     <div className='py-4'>
                         <h1 className='text-xl text-red-700 font-bold'>Let's Connect</h1>
@@ -28,16 +28,10 @@ const Footer = () => {
                         <p className='text-gray-500 text-sm'>11am - 6pm</p>
                     </div>
                 </div>
-                {/* <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
-                    <div className='py-4'>
-                        <h1 className='text-xl text-red-700 font-bold'>Address</h1>
-                        <p></p>
-                    </div>
-                </div> */}
                 <div className='flex items-center justify-center m-4 border-2 rounded shadow-xl'>
                     <div className='py-4'>
                         <h1 className='text-xl text-red-700 font-bold'>Leave Your Comment</h1>
-                        <textarea className='border border-4 mt-4' name="" id="" cols="28" rows="10"></textarea>
+                        <textarea className='border border-4 mt-4 p-4 text-gray-500' defaultValue="write here..." name="" id="" cols="28" rows="10"></textarea>
                         <br />
                         <button className='bg-red-700 text-white px-12 py-2 mt-2 rounded' type="submit">Send</button>
                     </div>

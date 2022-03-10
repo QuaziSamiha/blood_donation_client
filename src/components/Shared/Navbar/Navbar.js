@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faHandHoldingWater, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
+// import { UserContext } from '../../../App'
 
 export default function Navbar() {
 
