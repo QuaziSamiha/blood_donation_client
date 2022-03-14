@@ -24,17 +24,22 @@ const SearchDonor = () => {
     };
 
     return (
-        <section className='mx-16 my-16 py-12'>
-            <div className='px-8 pt-12 pb-24 shadow-2xl'>
-                <h1 className='pb-8 text-center my-8 text-2xl text-red-700 font-semibold'>Search for Donor</h1>
+        <section className='mx-8 md:mx-16 my-16 py-12'>
+            <div className='px-1 md:px-8 pt-12 pb-24 shadow-2xl'>
+                <h1 className='pb-8 text-center my-8 text-lg md:text-2xl text-red-700 font-bold sm:font-bold lg:font-semibold'>
+                    Search for Donor
+                </h1>
                 <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 lg:grid-cols-3'>
                     <div className='flex justify-center items-center'>
-                        <input className='py-2 px-4 my-2 w-3/4 rounded-md shadow focus:outline-none border-2'
-                            type="text" name="city" placeholder='Your City' {...register("city", { required: true, minLength: 5, pattern: /^[A-Za-z]+$/i })} /> <br />
-                        {errors.city && <p className='text-center text-sm text-red-400'>please enter your city name <br />minimum 5 letters required</p>} <br />
+                        <input
+                            className='text-xs sm:text-sm py-2 px-1 md:px-4 my-2 w-3/4 rounded-md shadow focus:outline-none border-2'
+                            type="text"
+                            name="city"
+                            placeholder='Your City' {...register("city", { required: true, minLength: 5, pattern: /^[A-Za-z]+$/i })} />
+                        {errors.city && <p className='text-center text-xs text-red-400'>please enter your city name or minimum 5 letters required</p>}
                     </div>
-                    <div className='flex justify-center items-center'>
-                        <select className='py-2 px-4  my-2 w-3/4 rounded-md shadow focus:outline-none border-2'
+                    <div className='text-xs sm:text-sm flex justify-center items-center'>
+                        <select className='py-2 px-1 md:px-4 my-2 w-3/4 rounded-md shadow focus:outline-none border-2'
                             name="bloodGrp"  {...register("bloodGrp", { required: true })}>
                             <option defaultValue={' '}>Select Your Blood Group</option>
                             <option value="A-">A-</option>
@@ -47,7 +52,7 @@ const SearchDonor = () => {
                             <option value="O%2B">O+</option>
                         </select> <br />
                     </div>
-                    <div className='flex justify-center items-center'>
+                    <div className='text-sm flex justify-center items-center'>
                         <input className='py-2 px-4 bg-red-700 text-white hover:bg-red-200 hover:text-red-700 font-bold my-2 w-3/4 rounded-md shadow focus:outline-none'
                             type="submit" value="Search" />
                     </div>
@@ -55,16 +60,16 @@ const SearchDonor = () => {
 
                 {
                     isSearched === true ?
-                        <div className='flex flex-row justify-center items center'>
-                            <h1 className='text-red-700 font-bold text-xl pt-8'>
+                        <div className='md:flex flex-row justify-center items center'>
+                            <h1 className='text-red-700 text-center font-bold md:text-xl pt-8'>
                                 {searchDonorInfo.length} Donors Available
                             </h1>
-                            {/* <Link to='/searchDetail'> */}
-                            <button onClick={() => { navigate('/searchDetail') }}
-                                className='bg-red-700 text-white hover:bg-red-200 hover:text-red-700 rounded-md my-8 mx-8 py-2 px-12'>
-                                Details
-                            </button>
-                            {/* </Link> */}
+                            <div className='flex justify-center'>
+                                <button onClick={() => { navigate('/searchDetail') }}
+                                    className='bg-red-700 text-white hover:bg-red-200 hover:text-red-700 rounded-md font-bold my-8 mx-8 py-1 px-12'>
+                                    Details
+                                </button>
+                            </div>
                         </div>
                         :
                         <span></span>
