@@ -21,19 +21,19 @@ export default function Navbar() {
                 </h3>
             </div>
             <ul className='hidden lg:flex lg:flex-row justify-between tracking-wider lg:py-2'>
-                <li className='hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/home'>Home</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/aboutUs'>About</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/donor'>Donor</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/signIn'>Sign in</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/admin'>Admin</Link>
                 </li>
             </ul>
@@ -49,18 +49,18 @@ export default function Navbar() {
 
 function SideMenu() {
     return (
-        <div className='lg:hidden fixed h-screen w-3/4 bg-red-600 top-14'>
+        <div className='lg:hidden ml-0 fixed h-screen w-3/4 bg-red-600 top-14'>
             <ul className='flex flex-col items-center tracking-wide font-bold'>
-                <li className='hover:bg-red-100 hover:text-red-700 px-20 py-2 mb-1 mt-3'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 px-20 py-2 mb-1 mt-3'>
                     <Link to='/home'>Home</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
                     <Link to='/aboutUs'>About</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
                     <Link to='/signIn'>Sign in</Link>
                 </li>
-                <li className='hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
+                <li className='rounded hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
                     <Link to='/admin'>Admin</Link>
                 </li>
             </ul>

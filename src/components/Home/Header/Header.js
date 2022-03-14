@@ -4,9 +4,11 @@ import HeaderSlider from '../HeaderSlider/HeaderSlider'
 
 export default function Header() {
     return (
-        < div className='container'>
+        < div className=''>
             <Navbar />
-            <HeaderSlider />
+            <div className='hidden lg:flex'>
+                <HeaderSlider />
+            </div>
         </div>
     )
 }

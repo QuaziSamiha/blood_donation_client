@@ -29,18 +29,18 @@ function App() {
   // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  useEffect(() => {
-    fetch('http://localhost:5001/isAdmin', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: loggedInUser.email })
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setIsAdmin(data);
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:5001/isAdmin', {
+  //     method: 'POST',
+  //     headers: { 'content-type': 'application/json' },
+  //     body: JSON.stringify({ email: loggedInUser.email })
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setIsAdmin(data);
+  //     })
+  // }, [])
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -55,12 +55,16 @@ function App() {
             <Route path="/beDonor" element={<PrivateRoute><BeDonorForm /></PrivateRoute>} />
             <Route path="/searchDetail" element={<PrivateRoute><SearchDetail /></PrivateRoute>} />
             <Route path="/getAppointment" element={<AppointmentRequest />} />
-            {
-              isAdmin === true ?
-                <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>} />
-                :
-                alert('you are not an admin')
-            }
+
+            {/* <Route path="/admin" element={<PrivateRoute>
+              {
+                isAdmin === true ?
+                  <Admin />
+                  :
+                  alert('you are not an admin')
+              }
+            </PrivateRoute>} /> */}
+
             <Route path="/addAdmin" element={<AddAdmin />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

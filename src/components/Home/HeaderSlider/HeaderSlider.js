@@ -15,12 +15,12 @@ export default function HeaderSlider() {
         slidesToScroll: 1,
         speed: 500,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 1500,
         pauseOnHover: true
     };
 
     return (
-        <div className='pt-14 w-full mx-8'>
+        <div className='pt-14 w-screen'>
             <Slider {...settings}>
                 <div className=''>
                     <img className='w-screen h-96' src={Slider1} alt="" />
