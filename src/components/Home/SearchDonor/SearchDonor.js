@@ -52,7 +52,7 @@ const SearchDonor = () => {
                             <option value="O%2B">O+</option>
                         </select> <br />
                     </div>
-                    <div className='text-sm flex justify-center items-center'>
+                    <div className='text-md flex justify-center items-center'>
                         <input className='py-2 px-4 bg-red-700 text-white hover:bg-red-200 hover:text-red-700 font-bold my-2 w-3/4 rounded-md shadow focus:outline-none'
                             type="submit" value="Search" />
                     </div>
