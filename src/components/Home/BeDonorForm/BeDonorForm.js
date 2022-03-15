@@ -56,7 +56,7 @@ const BeDonorForm = () => {
     }
 
     return (
-        <div>
+        <>
             <Navbar />
             <div className='pt-48 flex justify-center items-center'>
                 <div className='border-2 rounded-md p-8'>
@@ -128,7 +128,7 @@ const BeDonorForm = () => {
                 </div>
             </div>
             <Footer />
-        </div>
+        </>
     );
 };
 

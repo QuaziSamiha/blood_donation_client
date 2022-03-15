@@ -5,13 +5,12 @@ import Navbar from '../../Shared/Navbar/Navbar';
 const AddAdmin = () => {
 
     const [addAdmin, setAddAdmin] = useState(false);
-
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
 
-        fetch('http://localhost:5001/addAdmin', {
+        fetch('https://shrouded-sea-66725.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,7 +19,7 @@ const AddAdmin = () => {
         })
             .then(res => {
                 console.log(res);
-                setAddAdmin(true);
+                setAddAdmin(res.ok);
             })
     };
 
@@ -50,7 +49,7 @@ const AddAdmin = () => {
 
                         <div>
                             {
-                                addAdmin === true ? <p>Admin Added Successfully</p> : <span></span>
+                                addAdmin === true ? <p className='pt-4 text-center text-red-700'>Admin Added Successfully</p> : <span></span>
                             }
                         </div>
                     </div>

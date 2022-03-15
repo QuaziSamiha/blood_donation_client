@@ -69,7 +69,7 @@ export default function SignIn() {
         <>
             <Navbar />
             <div className='flex justify-center mt-16 pt-24 md:mt-32 md:pt-32'>
-                <div className='mb-16 px-8 md:px-44 py-12 bg-red-100 mx-8'>
+                <div className='mb-16 px-8 md:px-44 py-12 bg-red-100 rounded-md mx-8'>
                     {
                         user.isSignedIn ?
                             <button

@@ -27,14 +27,14 @@ export default function Navbar() {
                 <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/aboutUs'>About</Link>
                 </li>
-                <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
+                {/* <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/donor'>Donor</Link>
-                </li>
+                </li> */}
                 <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
                     <Link to='/signIn'>Sign in</Link>
                 </li>
                 <li className='rounded hover:bg-red-100 hover:text-red-700 p-2 mx-2'>
-                    <Link to='/admin'>Admin</Link>
+                    <Link to='/dashboard'>Dashboard</Link>
                 </li>
             </ul>
 
@@ -61,7 +61,7 @@ function SideMenu() {
                     <Link to='/signIn'>Sign in</Link>
                 </li>
                 <li className='rounded hover:bg-red-100 hover:text-red-700 px-20 py-2 my-1'>
-                    <Link to='/admin'>Admin</Link>
+                    <Link to='/dashboard'>Dashboard</Link>
                 </li>
             </ul>
         </div>
